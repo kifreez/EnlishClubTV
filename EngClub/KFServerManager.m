@@ -1,15 +1,13 @@
 //
-//  ViewController.h
+//  KFServerManager.m
 //  EngClub
 //
 //  Created by Kif on 30.01.17.
 //  Copyright © 2017 KifApp. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "KFServerManager.h"
 
-@interface ViewController : UIViewController
-
+@implementation KFServerManager
 
 @end
-

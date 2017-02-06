@@ -10,4 +10,21 @@
 
 @implementation KFNovelty
 
+- (instancetype)initWithServerResponse:(NSDictionary*) responseObject {
+    self = [super init];
+    if (self) {
+
+        self.title = [responseObject objectForKey:@"title"];
+        self.levels = [responseObject objectForKey:@"levels"];
+
+        NSString* urlString = [responseObject objectForKey:@"image"];
+
+        if (urlString) {
+            self.imageUrl = [NSURL URLWithString:urlString];
+        }
+
+    }
+    return self;
+}
+
 @end

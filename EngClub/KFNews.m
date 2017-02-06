@@ -10,4 +10,22 @@
 
 @implementation KFNews
 
+- (instancetype)initWithServerResponse:(NSDictionary*) responseObject {
+    self = [super init];
+    if (self) {
+
+        self.title = [responseObject objectForKey:@"title"];
+        self.content = [responseObject objectForKey:@"content"];
+        self.date = [responseObject objectForKey:@"date"];
+
+        NSString* urlString = [responseObject objectForKey:@"image"];
+
+        if (urlString) {
+            self.imageUrl = [NSURL URLWithString:urlString];
+        }
+
+    }
+    return self;
+}
+
 @end

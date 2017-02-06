@@ -6,36 +6,46 @@
 //  Copyright © 2017 KifApp. All rights reserved.
 //
 
-#import "KFSideBarViewController.h"
+#import "KFDrawerViewController.h"
+#import "KFTableViewController.h"
 #import <PGDrawerTransition.h>
 
-@interface KFSideBarViewController ()
+
+@interface KFDrawerViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *homeButton;
 @property (weak, nonatomic) IBOutlet UIButton *productButton;
 @property (weak, nonatomic) IBOutlet UIButton *aboutButton;
 
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *menuItems;
+
+@property (strong, nonatomic) KFTableViewController *vc;
+
 @end
 
-@implementation KFSideBarViewController
+@implementation KFDrawerViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-//    self.view.backgroundColor = [UIColor redColor];
+    [self.menuItems.firstObject setBackgroundColor:[UIColor colorWithRed:235.0f/255.0f green:235.0f/255.0f blue:235.0f/255.0f alpha:1.0f]];
 
 }
-- (void)viewWillAppear:(BOOL)animated
-{
+
+- (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 
     [self.homeButton addTarget:self action:@selector(touchDown:) forControlEvents:UIControlEventTouchDown];
-    [self.homeButton addTarget:self action:@selector(touchUpInside:) forControlEvents:UIControlEventTouchUpInside];
 
     [self.productButton addTarget:self action:@selector(touchDown:) forControlEvents:UIControlEventTouchDown];
     [self.productButton addTarget:self action:@selector(touchUpInside:) forControlEvents:UIControlEventTouchUpInside];
 
     [self.aboutButton addTarget:self action:@selector(touchDown:) forControlEvents:UIControlEventTouchDown];
     [self.aboutButton addTarget:self action:@selector(touchUpInside:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+
+    [self.homeButton addTarget:self action:@selector(touchUpInside:) forControlEvents:UIControlEventTouchUpInside];
 }
 - (IBAction)touchDown:(UIButton*)sender {
 
@@ -49,21 +59,16 @@
 - (IBAction)touchUpInside:(UIButton*)sender {
     sender.backgroundColor = [UIColor whiteColor];
     [sender setTitleColor:nil forState:UIControlStateHighlighted];
+    [self setSelectedMenuItem:sender];
+    [self dismissViewControllerAnimated:YES completion:nil];
+
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
-/*
-#pragma mark - Navigation
+- (void)setSelectedMenuItem:(UIButton*)item {
+    [self.menuItems makeObjectsPerformSelector:@selector(setBackgroundColor:) withObject:[UIColor whiteColor]];
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    item.backgroundColor = [UIColor colorWithRed:235.0f/255.0f green:235.0f/255.0f blue:235.0f/255.0f alpha:1.0f];
 }
-*/
 
 @end

@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface KFSideBarViewController : UIViewController
+@interface KFDrawerViewController : UIViewController
 
 @end

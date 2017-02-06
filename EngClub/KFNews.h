@@ -10,4 +10,11 @@
 
 @interface KFNews : NSObject
 
+@property (strong, nonatomic) NSString* title;
+@property (strong, nonatomic) NSString* content;
+@property (strong, nonatomic) NSURL* imageUrl;
+@property (strong, nonatomic) NSNumber* date;
+
+- (instancetype)initWithServerResponse:(NSDictionary*) responseObject;
+
 @end

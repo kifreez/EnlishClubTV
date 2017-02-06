@@ -10,4 +10,10 @@
 
 @interface KFNovelty : NSObject
 
+@property (strong, nonatomic) NSString* title;
+@property (strong, nonatomic) NSString* levels;
+@property (strong, nonatomic) NSURL* imageUrl;
+
+- (instancetype)initWithServerResponse:(NSDictionary*) responseObject;
+
 @end

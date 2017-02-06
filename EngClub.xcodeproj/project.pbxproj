@@ -7,25 +7,49 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13D6B8BFE3E63F72C0D4AEFD /* libPods-EngClub.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CEDD578318F71FD08061201F /* libPods-EngClub.a */; };
+		1F5C4BA61E42B06300AF75DF /* KFNews.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5C4BA51E42B06300AF75DF /* KFNews.m */; };
+		1F5C4BAA1E43426700AF75DF /* KFNewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5C4BA91E43426700AF75DF /* KFNewsTableViewCell.m */; };
 		1F75E2451E3F54AB0076BAB8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F75E2441E3F54AB0076BAB8 /* main.m */; };
 		1F75E2481E3F54AB0076BAB8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F75E2471E3F54AB0076BAB8 /* AppDelegate.m */; };
-		1F75E24B1E3F54AB0076BAB8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F75E24A1E3F54AB0076BAB8 /* ViewController.m */; };
 		1F75E24E1E3F54AB0076BAB8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F75E24C1E3F54AB0076BAB8 /* Main.storyboard */; };
 		1F75E2501E3F54AB0076BAB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F75E24F1E3F54AB0076BAB8 /* Assets.xcassets */; };
 		1F75E2531E3F54AB0076BAB8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F75E2511E3F54AB0076BAB8 /* LaunchScreen.storyboard */; };
+		1F958A211E43A4E600B1E95D /* KFNovelty.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F958A201E43A4E600B1E95D /* KFNovelty.m */; };
+		1F958A241E43F50700B1E95D /* KFNoveltyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F958A231E43F50700B1E95D /* KFNoveltyTableViewCell.m */; };
+		1F9CAFD11E40C37C00CD6270 /* KFDrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9CAFD01E40C37C00CD6270 /* KFDrawerViewController.m */; };
+		1F9CAFD31E41105600CD6270 /* SideBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F9CAFD21E41105600CD6270 /* SideBarView.xib */; };
+		1F9CAFD91E413C1F00CD6270 /* KFTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9CAFD81E413C1F00CD6270 /* KFTableViewController.m */; };
+		1FFB4A691E3F5FDE0022FDB0 /* KFServerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FFB4A681E3F5FDD0022FDB0 /* KFServerManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F5C4BA41E42B06300AF75DF /* KFNews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFNews.h; sourceTree = "<group>"; };
+		1F5C4BA51E42B06300AF75DF /* KFNews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFNews.m; sourceTree = "<group>"; };
+		1F5C4BA81E43426700AF75DF /* KFNewsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFNewsTableViewCell.h; sourceTree = "<group>"; };
+		1F5C4BA91E43426700AF75DF /* KFNewsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFNewsTableViewCell.m; sourceTree = "<group>"; };
 		1F75E2401E3F54AB0076BAB8 /* EngClub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EngClub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F75E2441E3F54AB0076BAB8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1F75E2461E3F54AB0076BAB8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1F75E2471E3F54AB0076BAB8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		1F75E2491E3F54AB0076BAB8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		1F75E24A1E3F54AB0076BAB8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		1F75E24D1E3F54AB0076BAB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1F75E24F1E3F54AB0076BAB8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F75E2521E3F54AB0076BAB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F75E2541E3F54AB0076BAB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F958A1F1E43A4E600B1E95D /* KFNovelty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFNovelty.h; sourceTree = "<group>"; };
+		1F958A201E43A4E600B1E95D /* KFNovelty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFNovelty.m; sourceTree = "<group>"; };
+		1F958A221E43F50700B1E95D /* KFNoveltyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFNoveltyTableViewCell.h; sourceTree = "<group>"; };
+		1F958A231E43F50700B1E95D /* KFNoveltyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFNoveltyTableViewCell.m; sourceTree = "<group>"; };
+		1F9CAFCF1E40C37C00CD6270 /* KFDrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFDrawerViewController.h; sourceTree = "<group>"; };
+		1F9CAFD01E40C37C00CD6270 /* KFDrawerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFDrawerViewController.m; sourceTree = "<group>"; };
+		1F9CAFD21E41105600CD6270 /* SideBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideBarView.xib; sourceTree = "<group>"; };
+		1F9CAFD71E413C1F00CD6270 /* KFTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFTableViewController.h; sourceTree = "<group>"; };
+		1F9CAFD81E413C1F00CD6270 /* KFTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFTableViewController.m; sourceTree = "<group>"; };
+		1FFB4A671E3F5FDD0022FDB0 /* KFServerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFServerManager.h; sourceTree = "<group>"; };
+		1FFB4A681E3F5FDD0022FDB0 /* KFServerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFServerManager.m; sourceTree = "<group>"; };
+		6B7172FB81A36091A675F952 /* Pods-EngClub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EngClub.release.xcconfig"; path = "Pods/Target Support Files/Pods-EngClub/Pods-EngClub.release.xcconfig"; sourceTree = "<group>"; };
+		7FEF2ABA83160917DF9DDC44 /* Pods-EngClub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EngClub.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EngClub/Pods-EngClub.debug.xcconfig"; sourceTree = "<group>"; };
+		CEDD578318F71FD08061201F /* libPods-EngClub.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EngClub.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +57,63 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13D6B8BFE3E63F72C0D4AEFD /* libPods-EngClub.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F5C4BA11E42180400AF75DF /* VeiwController */ = {
+			isa = PBXGroup;
+			children = (
+				1F9CAFD71E413C1F00CD6270 /* KFTableViewController.h */,
+				1F9CAFD81E413C1F00CD6270 /* KFTableViewController.m */,
+				1F9CAFCF1E40C37C00CD6270 /* KFDrawerViewController.h */,
+				1F9CAFD01E40C37C00CD6270 /* KFDrawerViewController.m */,
+			);
+			name = VeiwController;
+			sourceTree = "<group>";
+		};
+		1F5C4BA21E42184400AF75DF /* Storyboard and xib */ = {
+			isa = PBXGroup;
+			children = (
+				1F9CAFD21E41105600CD6270 /* SideBarView.xib */,
+				1F75E24C1E3F54AB0076BAB8 /* Main.storyboard */,
+				1F75E2511E3F54AB0076BAB8 /* LaunchScreen.storyboard */,
+			);
+			name = "Storyboard and xib";
+			sourceTree = "<group>";
+		};
+		1F5C4BA31E42B02E00AF75DF /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				1F5C4BA41E42B06300AF75DF /* KFNews.h */,
+				1F5C4BA51E42B06300AF75DF /* KFNews.m */,
+				1F958A1F1E43A4E600B1E95D /* KFNovelty.h */,
+				1F958A201E43A4E600B1E95D /* KFNovelty.m */,
+			);
+			name = Objects;
+			sourceTree = "<group>";
+		};
+		1F5C4BA71E43421400AF75DF /* ViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				1F5C4BA81E43426700AF75DF /* KFNewsTableViewCell.h */,
+				1F5C4BA91E43426700AF75DF /* KFNewsTableViewCell.m */,
+				1F958A221E43F50700B1E95D /* KFNoveltyTableViewCell.h */,
+				1F958A231E43F50700B1E95D /* KFNoveltyTableViewCell.m */,
+			);
+			name = ViewCell;
+			sourceTree = "<group>";
+		};
 		1F75E2371E3F54AB0076BAB8 = {
 			isa = PBXGroup;
 			children = (
 				1F75E2421E3F54AB0076BAB8 /* EngClub */,
 				1F75E2411E3F54AB0076BAB8 /* Products */,
+				D98B2E09A0C57EA8133B9A9E /* Pods */,
+				2290C12724DCB3FA70B46FE0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,13 +128,15 @@
 		1F75E2421E3F54AB0076BAB8 /* EngClub */ = {
 			isa = PBXGroup;
 			children = (
+				1F5C4BA11E42180400AF75DF /* VeiwController */,
+				1F5C4BA31E42B02E00AF75DF /* Objects */,
+				1F5C4BA71E43421400AF75DF /* ViewCell */,
+				1F5C4BA21E42184400AF75DF /* Storyboard and xib */,
 				1F75E2461E3F54AB0076BAB8 /* AppDelegate.h */,
 				1F75E2471E3F54AB0076BAB8 /* AppDelegate.m */,
-				1F75E2491E3F54AB0076BAB8 /* ViewController.h */,
-				1F75E24A1E3F54AB0076BAB8 /* ViewController.m */,
-				1F75E24C1E3F54AB0076BAB8 /* Main.storyboard */,
+				1FFB4A671E3F5FDD0022FDB0 /* KFServerManager.h */,
+				1FFB4A681E3F5FDD0022FDB0 /* KFServerManager.m */,
 				1F75E24F1E3F54AB0076BAB8 /* Assets.xcassets */,
-				1F75E2511E3F54AB0076BAB8 /* LaunchScreen.storyboard */,
 				1F75E2541E3F54AB0076BAB8 /* Info.plist */,
 				1F75E2431E3F54AB0076BAB8 /* Supporting Files */,
 			);
@@ -79,6 +151,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		2290C12724DCB3FA70B46FE0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CEDD578318F71FD08061201F /* libPods-EngClub.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D98B2E09A0C57EA8133B9A9E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7FEF2ABA83160917DF9DDC44 /* Pods-EngClub.debug.xcconfig */,
+				6B7172FB81A36091A675F952 /* Pods-EngClub.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,9 +175,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1F75E2571E3F54AB0076BAB8 /* Build configuration list for PBXNativeTarget "EngClub" */;
 			buildPhases = (
+				4829AAB28911DB90066C0F11 /* [CP] Check Pods Manifest.lock */,
 				1F75E23C1E3F54AB0076BAB8 /* Sources */,
 				1F75E23D1E3F54AB0076BAB8 /* Frameworks */,
 				1F75E23E1E3F54AB0076BAB8 /* Resources */,
+				F3430A0A42D9772E88F36562 /* [CP] Embed Pods Frameworks */,
+				EF727E914A9B46B27B5FA778 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -105,6 +197,7 @@
 		1F75E2381E3F54AB0076BAB8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = KF;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = KifApp;
 				TargetAttributes = {
@@ -141,19 +234,74 @@
 				1F75E2531E3F54AB0076BAB8 /* LaunchScreen.storyboard in Resources */,
 				1F75E2501E3F54AB0076BAB8 /* Assets.xcassets in Resources */,
 				1F75E24E1E3F54AB0076BAB8 /* Main.storyboard in Resources */,
+				1F9CAFD31E41105600CD6270 /* SideBarView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4829AAB28911DB90066C0F11 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EF727E914A9B46B27B5FA778 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EngClub/Pods-EngClub-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F3430A0A42D9772E88F36562 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EngClub/Pods-EngClub-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1F75E23C1E3F54AB0076BAB8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F75E24B1E3F54AB0076BAB8 /* ViewController.m in Sources */,
+				1F958A211E43A4E600B1E95D /* KFNovelty.m in Sources */,
 				1F75E2481E3F54AB0076BAB8 /* AppDelegate.m in Sources */,
+				1F9CAFD11E40C37C00CD6270 /* KFDrawerViewController.m in Sources */,
+				1F5C4BAA1E43426700AF75DF /* KFNewsTableViewCell.m in Sources */,
 				1F75E2451E3F54AB0076BAB8 /* main.m in Sources */,
+				1F5C4BA61E42B06300AF75DF /* KFNews.m in Sources */,
+				1F9CAFD91E413C1F00CD6270 /* KFTableViewController.m in Sources */,
+				1FFB4A691E3F5FDE0022FDB0 /* KFServerManager.m in Sources */,
+				1F958A241E43F50700B1E95D /* KFNoveltyTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +417,7 @@
 		};
 		1F75E2581E3F54AB0076BAB8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FEF2ABA83160917DF9DDC44 /* Pods-EngClub.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 6623YLVDYQ;
@@ -281,6 +430,7 @@
 		};
 		1F75E2591E3F54AB0076BAB8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B7172FB81A36091A675F952 /* Pods-EngClub.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 6623YLVDYQ;
@@ -310,6 +460,7 @@
 				1F75E2591E3F54AB0076BAB8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

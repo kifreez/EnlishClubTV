@@ -7,8 +7,23 @@
 //
 
 #import "KFTableViewController.h"
+#import "KFDrawerViewController.h"
+#import "KFServerManager.h"
+#import "KFNewsTableViewCell.h"
+#import "KFNoveltyTableViewCell.h"
+#import "KFNews.h"
+#import "KFNovelty.h"
+#import <PGDrawerTransition.h>
+#import <UIImageView+AFNetworking.h>
 
 @interface KFTableViewController ()
+
+@property (assign, nonatomic) BOOL loadingData;
+@property (strong, nonatomic) NSMutableArray *newsArray;
+@property (strong, nonatomic) NSMutableArray *noveltyArray;
+@property (strong, nonatomic) KFDrawerViewController *drawerViewController;
+@property (strong, nonatomic) PGDrawerTransition *drawerTransition;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *menuButton;
 
 @end
 
@@ -17,82 +32,166 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.newsArray = [NSMutableArray array];
+    self.noveltyArray = [NSMutableArray array];
+
+    [self postNewsFromServer];
+    [self postNoveltyFromServer];
+
+    self.drawerViewController = [[KFDrawerViewController alloc] initWithNibName:@"SideBarView" bundle:nil];
+    self.drawerTransition = [[PGDrawerTransition alloc] initWithTargetViewController:self
+                                                                drawerViewController:self.drawerViewController];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.menuButton setTarget:self];
+    [self.menuButton setAction:@selector(open:)];
+}
+
+- (IBAction)open:(id)sender {
+    [self.drawerTransition presentDrawerViewController];
+}
+
+#pragma mark - POST News request
+
+- (void) postNewsFromServer {
+
+    self.loadingData = YES;
+
+    [[KFServerManager sharedManager]
+     postNewsOnSuccess:^(NSArray *news) {
+         [self.newsArray addObjectsFromArray:news];
+
+         NSMutableArray* newPaths = [NSMutableArray array];
+
+         for (int i = (int)[self.newsArray count] - (int)[news count]; i < [self.newsArray count]; i++) {
+
+             [newPaths addObject:[NSIndexPath indexPathForRow:i inSection:0]];
+         }
+
+         [self.tableView reloadData];
+
+         self.loadingData = NO;
+
+     }
+     onFailure:^(NSError *error, NSInteger statusCode) {
+         NSLog(@"Error = %@, code = %ld", [error localizedDescription], (long)statusCode);
+     }];
+    
+}
+
+#pragma mark - POST Novelty request
+
+- (void) postNoveltyFromServer {
+
+    self.loadingData = YES;
+
+    [[KFServerManager sharedManager]
+     postNoveltyOnSuccess:^(NSArray *novelty) {
+         [self.noveltyArray addObjectsFromArray:novelty];
+
+         NSMutableArray* newPaths = [NSMutableArray array];
+
+         for (int i = (int)[self.noveltyArray count] - (int)[novelty count]; i < [self.noveltyArray count]; i++) {
+
+             [newPaths addObject:[NSIndexPath indexPathForRow:i inSection:0]];
+         }
+
+         [self.tableView beginUpdates];
+         [self.tableView insertRowsAtIndexPaths:newPaths withRowAnimation:UITableViewRowAnimationTop];
+         [self.tableView endUpdates];
+
+         self.loadingData = NO;
+
+     }
+     onFailure:^(NSError *error, NSInteger statusCode) {
+         NSLog(@"Error = %@, code = %ld", [error localizedDescription], (long)statusCode);
+     }];
+    
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return [self.newsArray count] + [self.noveltyArray count];
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
-}
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
+    static NSString* identifierNews = @"cellForNews";
+    static NSString* identifierNovelty = @"cellForNovelty";
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
+    if (indexPath.row < 3) {
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
+        KFNoveltyTableViewCell *cellNovelty = [tableView dequeueReusableCellWithIdentifier:identifierNovelty];
 
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
+        KFNovelty* novelty = [self.noveltyArray objectAtIndex:indexPath.row];
 
-/*
-#pragma mark - Navigation
+        cellNovelty.titleOfNovelty.text = [NSString stringWithFormat:@"%@", novelty.title];
+        cellNovelty.levelsOfNovelty.text = [NSString stringWithFormat:@"%@", novelty.levels];
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+        NSURLRequest* request = [NSURLRequest requestWithURL:novelty.imageUrl];
+
+        cellNovelty.imageOfNovelty.image = nil;
+
+        [cellNovelty.imageOfNovelty setImageWithURLRequest:request
+                                    placeholderImage:nil
+                                             success:^(NSURLRequest * _Nonnull request, NSHTTPURLResponse * _Nullable response, UIImage * _Nonnull image) {
+
+                                                 cellNovelty.imageOfNovelty.image = image;
+                                                 [cellNovelty layoutSubviews];
+                                             }
+                                             failure:^(NSURLRequest * _Nonnull request, NSHTTPURLResponse * _Nullable response, NSError * _Nonnull error) {
+                                                 
+                                             }];
+
+        return cellNovelty;
+
+    } else {
+
+        NSIndexPath* newIndexPath = [NSIndexPath indexPathForRow:indexPath.row - 3 inSection:1];
+
+        KFNewsTableViewCell *cellNews = [tableView dequeueReusableCellWithIdentifier:identifierNews];
+
+        KFNews* news = [self.newsArray objectAtIndex:newIndexPath.row];
+
+        cellNews.titleLabel.text = [NSString stringWithFormat:@"%@", news.title];
+        cellNews.descriptionLabel.text = [NSString stringWithFormat:@"%@", news.content];
+
+        NSURLRequest* request = [NSURLRequest requestWithURL:news.imageUrl];
+
+        cellNews.imageOfNews.image = nil;
+
+        [cellNews.imageOfNews setImageWithURLRequest:request
+                                    placeholderImage:nil
+                                             success:^(NSURLRequest * _Nonnull request, NSHTTPURLResponse * _Nullable response, UIImage * _Nonnull image) {
+
+                                                 cellNews.imageOfNews.image = image;
+                                                 [cellNews layoutSubviews];
+                                             }
+                                             failure:^(NSURLRequest * _Nonnull request, NSHTTPURLResponse * _Nullable response, NSError * _Nonnull error) {
+
+                                             }];
+
+        NSDate *date = [NSDate dateWithTimeIntervalSince1970:([news.date integerValue] / 1000)];
+
+        NSDateFormatter * formatter =  [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"dd.MM.yyyy"];
+        
+        NSString *formatedDate = [formatter stringFromDate:date];
+        cellNews.dateOfNews.text = [NSString stringWithFormat:@"%@", formatedDate];
+
+        return cellNews;
+    }
+
+
+    return nil;
 }
-*/
 
 @end

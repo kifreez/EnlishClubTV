@@ -8,7 +8,7 @@
 
 #import "KFNewsTableViewCell.h"
 
-@implementation KFTableViewCell
+@implementation KFNewsTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];

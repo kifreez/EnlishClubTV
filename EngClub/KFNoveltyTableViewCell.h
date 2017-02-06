@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface KFNoveltyTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *imageOfNovelty;
+@property (weak, nonatomic) IBOutlet UILabel *titleOfNovelty;
+@property (weak, nonatomic) IBOutlet UILabel *levelsOfNovelty;
 
 @end
